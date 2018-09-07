@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace TicTacToe
 {
-    class BoardGame
+    class Display
     {
-        static void Main(string[] args)
-        {
-        }
     }
 }
