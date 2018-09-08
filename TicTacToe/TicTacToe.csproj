@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{87AA4246-A8A1-4559-8E74-B14E5EF724D7}</ProjectGuid>
+    <ProjectGuid>{F211625B-526D-43A2-87E4-489DCD12C20D}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>TicTacToe</RootNamespace>
     <AssemblyName>TicTacToe</AssemblyName>
