@@ -17,25 +17,7 @@ namespace TicTacToe
 
         public void DisplayCurrentBoard()
         {
-            for(int i = 0; i <3; i++)
-            {
-                for(int j = 0; j < 3; j++)
-                {
-                    try
-                    {
-                        if (board[i, j].Equals(""))
-                            Console.WriteLine("| ");
-                        else
-                            Console.Write("|" + board[i, j]);
-                    }
-                    catch(Exception e)
-                    {
-                        
-                    }
 
-                }
-                Console.WriteLine();
-            }
         }
     }
 }
