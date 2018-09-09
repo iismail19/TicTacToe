@@ -16,7 +16,7 @@ namespace TicTacToe
             theBoard.AddtoBoard(9, CurrentStateOnBoard.X);
             Display myDisplay = new Display(theBoard);
             myDisplay.DisplayCurrentBoard();
-            Console.ReadKey();// if not run in debug mode, this line is needed or program will terminate after finishing
+            //Console.ReadKey();// if not run in debug mode, this line is needed or program will terminate after finishing
         }
     }
 }
