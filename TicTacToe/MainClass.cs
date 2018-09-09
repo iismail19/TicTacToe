@@ -11,9 +11,9 @@ namespace TicTacToe
         public static void Main(string[] args)
         {
             BoardGame theBoard = new BoardGame();
-            theBoard.AddtoBoard(1, "X");
-            theBoard.AddtoBoard(5, "X");
-            theBoard.AddtoBoard(9, "X");
+            theBoard.AddtoBoard(1, CurrentStateOnBoard.X);
+            theBoard.AddtoBoard(5, CurrentStateOnBoard.X);
+            theBoard.AddtoBoard(9, CurrentStateOnBoard.X);
             Display myDisplay = new Display(theBoard);
             myDisplay.DisplayCurrentBoard();
             Console.ReadKey();// if not run in debug mode, this line is needed or program will terminate after finishing
