@@ -18,6 +18,7 @@ namespace TicTacToe
         private int ply1Score;
         private int ply2Score;
         private int numberOfGames;
+        private int turnCount;
 
         // initialize the players and the score
         public Players(String n1, String n2, int nGames)
@@ -27,6 +28,7 @@ namespace TicTacToe
             ply1Score = 0;
             ply2Score = 0;
             numberOfGames = nGames;
+            turnCount = 0;
         }
 
         // When we add an AI.. second player name is not needed
@@ -37,11 +39,55 @@ namespace TicTacToe
             ply1Score = 0;
             ply2Score = 0;
             numberOfGames = nGames;
+            turnCount = 0;
         }
 
         // getters
+        public String GetPlayer1Name ()
+        {
+            return player1;
+        }
+
+        public String GetPlayer2Name()
+        {
+            return player2;
+        }
+
+        public CurrentStateOnBoard GetTurn()
+        {
+            return turn;
+        }
+
+        public int GetPly1Score()
+        {
+            return ply1Score;
+        }
+
+        public int GetPly2Score()
+        {
+            return ply2Score;
+        }
+
+        public int GetNumberOfGames()
+        {
+            return numberOfGames;
+        }
+
+        public int GetTurnCount()
+        {
+            return turnCount;
+        }
 
         // setters
+        public void SetPlayer1Name(String name)
+        {
+            player1 = name;
+        }
+
+        public void SetPlayer2Name(String name)
+        {
+            player2 = name;
+        }
 
         // keep track of turn fucntion, to change change the CurrentStateOnBoard from X to O and vice-versa
         public CurrentStateOnBoard Turn()
@@ -50,6 +96,7 @@ namespace TicTacToe
                 turn = CurrentStateOnBoard.O;
             else if(turn == CurrentStateOnBoard.O)
                 turn = CurrentStateOnBoard.X;
+            turnCount++;
             return turn;
         }
 
