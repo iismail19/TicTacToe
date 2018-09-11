@@ -13,6 +13,7 @@ namespace TicTacToe
 
         private String player1;
         private String player2;
+        private CurrentStateOnBoard turn = CurrentStateOnBoard.X;
 
         private int ply1Score;
         private int ply2Score;
@@ -43,7 +44,14 @@ namespace TicTacToe
         // setters
 
         // keep track of turn fucntion, to change change the CurrentStateOnBoard from X to O and vice-versa
-
+        public CurrentStateOnBoard Turn()
+        {
+            if (turn == CurrentStateOnBoard.X)
+                turn = CurrentStateOnBoard.O;
+            else if(turn == CurrentStateOnBoard.O)
+                turn = CurrentStateOnBoard.X;
+            return turn;
+        }
 
 
     }
