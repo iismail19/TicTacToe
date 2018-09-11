@@ -49,9 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckWinner.cs" />
     <Compile Include="Display.cs" />
     <Compile Include="BoardGame.cs" />
     <Compile Include="MainClass.cs" />
+    <Compile Include="Players.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
