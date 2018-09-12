@@ -17,30 +17,29 @@ namespace TicTacToe
 
         private int ply1Score;
         private int ply2Score;
-        private int numberOfGames;
+        //private int numberOfGames;
         private int turnCount;
 
         // initialize the players and the score
-        public Players(String n1, String n2, int nGames)
+        public Players(String n1, String n2)
         {
             player1 = n1;
             player2 = n2;
             ply1Score = 0;
             ply2Score = 0;
-            numberOfGames = nGames;
             turnCount = 0;
         }
 
         // When we add an AI.. second player name is not needed
-        public Players(String n1, int nGames)
-        {
-            player1 = n1;
-            player2 = "Computer";
-            ply1Score = 0;
-            ply2Score = 0;
-            numberOfGames = nGames;
-            turnCount = 0;
-        }
+        //public Players(String n1, int nGames)
+        //{
+        //    player1 = n1;
+        //    player2 = "Computer";
+        //    ply1Score = 0;
+        //    ply2Score = 0;
+        //    numberOfGames = nGames;
+        //    turnCount = 0;
+        //}
 
         // getters
         public String GetPlayer1Name ()
@@ -68,10 +67,10 @@ namespace TicTacToe
             return ply2Score;
         }
 
-        public int GetNumberOfGames()
-        {
-            return numberOfGames;
-        }
+        //public int GetNumberOfGames()
+        //{
+        //    return numberOfGames;
+        //}
 
         public int GetTurnCount()
         {
