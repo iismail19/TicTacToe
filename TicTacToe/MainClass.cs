@@ -23,14 +23,24 @@ namespace TicTacToe
             Console.WriteLine("Enter player two's name");
             String player2 = Console.ReadLine();
             Players thePlayers = new Players(player1, player2);
+            CheckWinner checkWin = new CheckWinner();
 
             Boolean game = true;
+            int position;
+            CurrentStateOnBoard turn;
             //Game
             while (game == true)
             {
                 theDisplay.DisplayCurrentBoard();
                 Console.WriteLine(thePlayers.GetTurn());
-                game = false;
+                Console.WriteLine("Enter move");
+                position = Convert.ToInt32(Console.ReadLine());
+                theBoard.AddtoBoard(position, thePlayers.GetTurn());
+                turn = checkWin.CheckForWinner(position, theBoard);
+                if (turn != CurrentStateOnBoard.Empty)
+                    game = false;
+                //theDisplay.DisplayCurrentBoard();
+                thePlayers.Turn();
             }
 
             //Results / go back to staet
