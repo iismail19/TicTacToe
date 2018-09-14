@@ -33,30 +33,28 @@ namespace TicTacToe
             while (game == true)
             {
                 theDisplay.DisplayCurrentBoard();
-                Console.WriteLine($"It is player {thePlayers.Turn()}'s turn");
+                Console.WriteLine($"It is player {thePlayers.GetTurn()}'s turn");
                 Console.WriteLine("Enter move");
                 position = Convert.ToInt32(Console.ReadLine());
 
                 // account for valid moves
-                while((position < 0) && (position > 10))
+                while((position < 1) || (position > 9) || (theBoard.GetPositionState(position) != CurrentStateOnBoard.Empty))
                 {
-                    Console.WriteLine("Enter move");
+                    Console.WriteLine("Invalid, Re-enter move");
                     position = Convert.ToInt32(Console.ReadLine());
-
-                    // only if board is empty then add to the board.. 
-                    //if (theboard.getpositionstate(position) == currentstateonboard.empty)
-                    //{
-
-                    //}
 
                 }
 
                 theBoard.AddtoBoard(position, thePlayers.GetTurn());
                 turn = checkWin.CheckForWinner(position, theBoard);
                 if (turn != CurrentStateOnBoard.Empty)
+                {
+                    Console.WriteLine($"Player {turn}'s wins!");
                     game = false;
+                }
                 //theDisplay.DisplayCurrentBoard();
                 // Clarity on who goes
+                thePlayers.Turn();
                // Console.WriteLine($"It is player {thePlayers.Turn()}'s turn");
             }
 
