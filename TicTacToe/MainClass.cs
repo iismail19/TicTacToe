@@ -44,7 +44,7 @@ namespace TicTacToe
                     position = Convert.ToInt32(Console.ReadLine());
 
                     // only if board is empty then add to the board.. 
-                    //if (theBoard.GetPositionState(position) == CurrentStateOnBoard.Empty)
+                    //if (theboard.getpositionstate(position) == currentstateonboard.empty)
                     //{
 
                     //}
