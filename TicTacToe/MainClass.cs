@@ -29,18 +29,35 @@ namespace TicTacToe
             int position;
             CurrentStateOnBoard turn;
             //Game
+            // BUG: keeps changing turn's even if player entered valid input
             while (game == true)
             {
                 theDisplay.DisplayCurrentBoard();
-                Console.WriteLine(thePlayers.GetTurn());
+                Console.WriteLine($"It is player {thePlayers.Turn()}'s turn");
                 Console.WriteLine("Enter move");
                 position = Convert.ToInt32(Console.ReadLine());
+
+                // account for valid moves
+                while((position < 0) && (position > 10))
+                {
+                    Console.WriteLine("Enter move");
+                    position = Convert.ToInt32(Console.ReadLine());
+
+                    // only if board is empty then add to the board.. 
+                    //if (theBoard.GetPositionState(position) == CurrentStateOnBoard.Empty)
+                    //{
+
+                    //}
+
+                }
+
                 theBoard.AddtoBoard(position, thePlayers.GetTurn());
                 turn = checkWin.CheckForWinner(position, theBoard);
                 if (turn != CurrentStateOnBoard.Empty)
                     game = false;
                 //theDisplay.DisplayCurrentBoard();
-                thePlayers.Turn();
+                // Clarity on who goes
+               // Console.WriteLine($"It is player {thePlayers.Turn()}'s turn");
             }
 
             //Results / go back to staet
