@@ -58,6 +58,11 @@ namespace TicTacToe
                     Console.WriteLine($"Player {turn} wins!");
                     game = false;
                 }
+                if (checkWin.DeclareDraw(thePlayers))
+                {
+                    Console.WriteLine("Draw!");
+                    game = false;
+                }
                 //theDisplay.DisplayCurrentBoard();
                 // Clarity on who goes
                 thePlayers.Turn();

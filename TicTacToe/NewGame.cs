@@ -26,7 +26,8 @@ namespace TicTacToe
                 m.Start();
             }
             else
-                Console.ReadKey();
+                Console.WriteLine("Thanks for playing!");
+            Console.ReadKey();
 
         }
 
