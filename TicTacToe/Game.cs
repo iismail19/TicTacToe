@@ -26,12 +26,17 @@ namespace TicTacToe
             theOption = s.getOption();
         }
 
+        // game vars
+        String input;
+        Boolean validInput = false;
+        int position;
+
+
         // loop
         public void PlayGame()
         {
 
             Boolean game = true;
-            int position;
             CurrentStateOnBoard turn;
 
             //Game
@@ -41,15 +46,16 @@ namespace TicTacToe
                 theDisplay.DisplayCurrentBoard();
                 Console.WriteLine($"It is {thePlayers.GetCurrentPlayerName()}'s: ({thePlayers.GetTurn()}) turn");
                 Console.WriteLine("Enter move");
-                position = Convert.ToInt32(Console.ReadLine());
+                // Attempt to solve Input that is not an int
+                EnterInput();
 
                 // account for valid moves
-                while((position < 1) || (position > 9) || (theBoard.GetPositionState(position) != CurrentStateOnBoard.Empty))
-                {
-                    Console.WriteLine("Invalid, Re-enter move");
-                    position = Convert.ToInt32(Console.ReadLine());
+                //while((position < 1) || (position > 9) || (theBoard.GetPositionState(position) != CurrentStateOnBoard.Empty))
+                //{
+                //    Console.WriteLine("Invalid, Re-enter move");
+                //    position = Convert.ToInt32(Console.ReadLine());
 
-                }
+                //}
 
                 theBoard.AddtoBoard(position, thePlayers.GetTurn());
                 turn = checkWin.CheckForWinner(position, theBoard);
@@ -73,6 +79,26 @@ namespace TicTacToe
             theOption.PlayNewGame();
 
             //Console.ReadKey(); // prevent console from closing once program is complete
+        }
+
+        public void EnterInput()
+        {
+            while (validInput != true)
+            {
+                input = Console.ReadLine();
+
+                validInput = Int32.TryParse(input, out position); // if true then it will be be send as position
+                if ((position < 1) || (position > 9) || (theBoard.GetPositionState(position) != CurrentStateOnBoard.Empty))
+                {
+                    Console.WriteLine("Invalid, Re-enter move");
+                    input = Console.ReadLine();
+
+                    validInput = Int32.TryParse(input, out position);
+                }
+
+            }
+            // reset validInput back to false or else it will never ask user for input again
+            validInput = false;
         }
 
 
