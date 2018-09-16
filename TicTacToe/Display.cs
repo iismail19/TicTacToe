@@ -51,5 +51,6 @@ namespace TicTacToe
             Console.WriteLine("__ __ __");
             Console.WriteLine($"{spaceOnBoard[6]} | {spaceOnBoard[7]} | {spaceOnBoard[8]}");
         }
+
     }
 }

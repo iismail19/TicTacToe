@@ -99,6 +99,13 @@ namespace TicTacToe
             return turn;
         }
 
+        public String GetCurrentPlayerName()
+        {
+            if (turn == CurrentStateOnBoard.X)
+                return player1;
+            else
+                return player2;
+        }
 
     }
 }

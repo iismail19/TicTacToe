@@ -39,7 +39,7 @@ namespace TicTacToe
             while (game == true)
             {
                 theDisplay.DisplayCurrentBoard();
-                Console.WriteLine($"It is player {thePlayers.GetTurn()}'s turn");
+                Console.WriteLine($"It is {thePlayers.GetCurrentPlayerName()}'s: ({thePlayers.GetTurn()}) turn");
                 Console.WriteLine("Enter move");
                 position = Convert.ToInt32(Console.ReadLine());
 
