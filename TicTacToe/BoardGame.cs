@@ -53,7 +53,7 @@ namespace TicTacToe
                     board[2, 1] = value;
                     return true;
                 case 9:
-                    board[2, 0] = value;
+                    board[2, 2] = value;
                     return true;
                 default:
                     return false; // Will retun false when an invalid index number supplied
