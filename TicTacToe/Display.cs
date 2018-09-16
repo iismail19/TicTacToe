@@ -26,14 +26,22 @@ namespace TicTacToe
                 return ' ';
         }
 
-        
+        public char IntToChar(int num)
+        {
+            char[] number = num.ToString().ToCharArray();
+            return number[0]; // this works for our case becuse we are using single digit numbers
+        }
+
+
         public void DisplayCurrentBoard()
         {
             // Get all characters to be displayed on Board
-            char[] spaceOnBoard = new char[9];
+            char[] spaceOnBoard = new char[9];  
             for(int i =1; i <= 9; i++)
             {
-                spaceOnBoard[i-1] = GetSpace(board.GetPositionState(i));
+                char currentPos = IntToChar(i);
+                //in line if (true) then a : else b -- Logic
+                spaceOnBoard[i-1] =  (board.GetPositionState(i) == CurrentStateOnBoard.Empty) ? currentPos : GetSpace(board.GetPositionState(i)); 
             }
 
             // Display then to screen
