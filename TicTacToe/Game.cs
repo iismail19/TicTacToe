@@ -64,15 +64,16 @@ namespace TicTacToe
                     Console.WriteLine($"Player {turn} wins!");
                     game = false;
                 }
+            
+                //theDisplay.DisplayCurrentBoard();
+                // Clarity on who goes
+                thePlayers.Turn();
                 if (checkWin.DeclareDraw(thePlayers))
                 {
                     Console.WriteLine("Draw!");
                     game = false;
                 }
-                //theDisplay.DisplayCurrentBoard();
-                // Clarity on who goes
-                thePlayers.Turn();
-               // Console.WriteLine($"It is player {thePlayers.Turn()}'s turn");
+                // Console.WriteLine($"It is player {thePlayers.Turn()}'s turn");
             }
 
             //Results / go back to staet
