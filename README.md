@@ -9,7 +9,7 @@ This project is a console application and was created using C#. Please download 
 ### New Game Option
 - Allows to play as many games as one may desire
 ### Tic Tac Toe
-- Can play Tic Tac Toe using X's and O's, will calculate who wins and if there is every a draw
+- Can play Tic Tac Toe using X's and O's, will calculate who wins and if there is ever a draw
 ## Technologies
 Created using Visual Studio
 ## Creators
